@@ -2,7 +2,7 @@
 namespace Modules\SSO\Services\Dao;
 
 use Extension\Service\BaseDaoServiceExtend;
-use Modules\SSO\Models\User;
+use Modules\SSO\Models\user\User;
 
 class UserDaoService
 {
