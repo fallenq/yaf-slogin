@@ -1,5 +1,5 @@
 <?php
-namespace Modules\Test\Models;
+namespace Modules\SSO\Models;
 
 use Extension\DB\BaseModelExtend;
 use Extension\DB\ModelExtend;
