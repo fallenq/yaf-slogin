@@ -5,7 +5,7 @@ use Helper\CommonHelper;
 use Helper\TimeHelper;
 use Helper\ArrayHelper;
 use Modules\Test\Models\SparrowTest;
-use Modules\Test\Services\Dao\TestDaoService;
+use Modules\Test\Services\Dao\UserDaoService;
 use Modules\Test\Services\Func\TestFuncService;
 use Tool\RedisTool;
 

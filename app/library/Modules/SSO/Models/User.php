@@ -5,19 +5,19 @@ use Extension\DB\BaseModelExtend;
 use Extension\DB\ModelExtend;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SparrowTest extends \EloquentModel
+class User extends \EloquentModel
 {
     use SoftDeletes, BaseModelExtend, ModelExtend;
 
-    protected $table = 'sparrow_test';
+//    protected $table = 'sparrow_test';
 
 //    protected $primaryKey = 'id';
 
 //    protected $incrementing = false;
 
-    const UPDATED_AT = 'update_at';
-    const DELETED_AT = 'delete_at';
+//    const UPDATED_AT = 'updated_at';
+//    const DELETED_AT = 'delete_at';
 
-    const COLUMN_FIELDS = ['name', 'type'];
+    const COLUMN_FIELDS = ['name', 'password', 'salt'];
 
 }
