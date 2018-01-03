@@ -1,6 +1,8 @@
 <?php
 namespace Tool\Slogan;
 
+use Extension\Tool\BaseSloganTrait;
+
 class UserSlogan
 {
     use BaseSloganTrait;

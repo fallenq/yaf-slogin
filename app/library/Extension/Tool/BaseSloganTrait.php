@@ -1,5 +1,5 @@
 <?php
-namespace Tool\Slogan;
+namespace Extension\Tool;
 
 use Helper\CommonHelper;
 use Helper\StringHelper;
