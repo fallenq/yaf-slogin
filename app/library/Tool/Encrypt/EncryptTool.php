@@ -23,4 +23,9 @@ class EncryptTool
         return $this->handle->HashPassword($content);
     }
 
+    public function check($password, $source)
+    {
+        return $this->handle->CheckPassword($source, $password);
+    }
+
 }
