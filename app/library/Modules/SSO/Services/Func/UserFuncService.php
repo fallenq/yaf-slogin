@@ -6,4 +6,9 @@ use Extension\Service\BaseFuncServiceExtend;
 class UserFuncService
 {
     use BaseFuncServiceExtend;
+
+    public static function validateToken($token)
+    {
+        
+    }
 }

@@ -12,9 +12,14 @@ class UserCacheService
 //    const REDIS_DB = '';
     const REDIS_INDEX = '1';
 
-    public static function getUserLoginInfo($token)
+    /**
+     * Get user info with login from Redis
+     * @param $userIdentity
+     * @return mixed
+     */
+    public static function getUserLoginInfo($userIdentity)
     {
-        $loginTag = StringHelper::combineParams(':', UserSlogan::getValue(UserSlogan::LOGIN_INFO), $token);
+        $loginTag = StringHelper::combineParams(':', UserSlogan::getValue(UserSlogan::LOGIN_INFO), $userIdentity);
         return static::getRedisConnection()->get($loginTag);
     }
 
