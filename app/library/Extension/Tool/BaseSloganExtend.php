@@ -4,7 +4,7 @@ namespace Extension\Tool;
 use Helper\CommonHelper;
 use Helper\StringHelper;
 
-trait BaseSloganTrait
+trait BaseSloganExtend
 {
 
     private static function getEnvPrefix($customEnv = null)

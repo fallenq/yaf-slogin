@@ -1,11 +1,11 @@
 <?php
 namespace Tool\Slogan;
 
-use Extension\Tool\BaseSloganTrait;
+use Extension\Tool\BaseSloganExtend;
 
 class UserSlogan
 {
-    use BaseSloganTrait;
+    use BaseSloganExtend;
 
 //    const CONFIG_MODULE = "common";
     const LOGIN_INFO = "slogan.user.login_info";
