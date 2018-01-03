@@ -34,4 +34,10 @@ class StringHelper
         }
         return substr_count($source, $sub);
     }
+
+
+    public static function combineParams($space = ',', ...$params)
+    {
+        return implode($space, $params);
+    }
 }
