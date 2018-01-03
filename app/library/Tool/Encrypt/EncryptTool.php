@@ -6,7 +6,7 @@ class EncryptTool
 
     private $handle = null;
 
-    private static function createHandle()
+    private function createHandle()
     {
         return new PasswordHash(8, false);
     }
@@ -18,6 +18,9 @@ class EncryptTool
         return $encryptTool;
     }
 
-
+    public function encrypt($content)
+    {
+        return $this->handle->HashPassword($content);
+    }
 
 }
