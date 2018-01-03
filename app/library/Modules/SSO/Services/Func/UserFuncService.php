@@ -9,6 +9,6 @@ class UserFuncService
 
     public static function validateToken($token)
     {
-        
+
     }
 }
