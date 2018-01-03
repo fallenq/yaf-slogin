@@ -1,7 +1,7 @@
 <?php
 use Yaf\Controller_Abstract;
 
-class TestController extends Controller_Abstract
+class GateController extends Controller_Abstract
 {
 
     public $actions = array(
