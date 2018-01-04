@@ -17,7 +17,8 @@
         "illuminate/events": "^5.5@dev",
         "symfony/debug": "^3.3",
         "symfony/var-dumper": "^3.3",
-        "doctrine/dbal": "^2.6"
+        "doctrine/dbal": "^2.6",
+		"hashids/hashids": "^2.1@dev"
 	},
 	"minimum-stability": "dev",
     "repositories": {

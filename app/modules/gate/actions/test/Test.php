@@ -7,7 +7,6 @@ class TestAction extends Action_Abstract
 {
     public function execute()
     {
-        var_dump(TestCacheService::test());
 //        $encryptTool = EncryptTool::getInstance();
 //        $encrypt = $encryptTool->encrypt("test");
 //        var_dump($encrypt);
