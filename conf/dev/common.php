@@ -14,5 +14,12 @@ return [
         'user'  =>  [
             'login_info'  =>  'sso:user:login:info',
         ]
+    ],
+    'hashids'   =>  [
+        'default'   =>  [
+            'salt'  =>  'fallen-slogin',
+            'alphabet'  =>  'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
+//            'alphabet'  =>  'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`~!@#$%^&*()-_=+\\|\'";:/?.>,<{[}]',
+        ]
     ]
 ];
