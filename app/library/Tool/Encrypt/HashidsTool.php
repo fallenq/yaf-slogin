@@ -8,7 +8,7 @@ use Helper\StringHelper;
 
 class HashidsTool
 {
-    const BASIC_FREFIX  = 'hashids.default.basic';
+    const BASIC_PREFIX  = 'hashids.default.basic';
     const BASIC_NUMBER  = 'number';
     const BASIC_CAPITAL = 'capital';
     const BASIC_SMALL   = 'small';
@@ -45,7 +45,7 @@ class HashidsTool
         $alphabet = '';
         foreach ($types as $type) {
             if (in_array($type, [static::BASIC_NUMBER, static::BASIC_CAPITAL, static::BASIC_SMALL])) {
-                $temp = CommonHelper::config('common', StringHelper::combineParams('.', static::BASIC_FREFIX, $type), '');
+                $temp = CommonHelper::config('common', StringHelper::combineParams('.', static::BASIC_PREFIX, $type), '');
                 if (!empty($temp)) {
                     $alphabet .= $temp;
                 }
