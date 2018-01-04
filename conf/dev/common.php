@@ -20,6 +20,11 @@ return [
             'salt'  =>  'fallen-slogin',
             'alphabet'  =>  'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
 //            'alphabet'  =>  'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890`~!@#$%^&*()-_=+\\|\'";:/?.>,<{[}]',
-        ]
+            'basic'     =>  [
+                'number'    =>  '1234567890',
+                'capital'   =>  'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                'small'     =>  'abcdefghijklmnopqrstuvwxyz',
+            ]
+        ],
     ]
 ];

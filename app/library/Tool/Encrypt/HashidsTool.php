@@ -2,10 +2,17 @@
 namespace Tool\Encrypt;
 
 use Hashids\Hashids;
+use Helper\ArrayHelper;
 use Helper\CommonHelper;
+use Helper\StringHelper;
 
 class HashidsTool
 {
+    const BASIC_FREFIX  = 'hashids.default.basic';
+    const BASIC_NUMBER  = 'number';
+    const BASIC_CAPITAL = 'capital';
+    const BASIC_SMALL   = 'small';
+
     private $_handle = null;
 
     public static function getInstance($alphabet = '', $minLength = 4, $salt = '')
@@ -27,6 +34,24 @@ class HashidsTool
             $salt = CommonHelper::config('common', 'hashids.default.salt', '');
         }
         return [$alphabet, $salt];
+    }
+
+    public static function getBasicAlphabet(...$types)
+    {
+        $types = array_unique($types);
+        if (empty($types)) {
+            return '';
+        }
+        $alphabet = '';
+        foreach ($types as $type) {
+            if (in_array($type, [static::BASIC_NUMBER, static::BASIC_CAPITAL, static::BASIC_SMALL])) {
+                $temp = CommonHelper::config('common', StringHelper::combineParams('.', static::BASIC_FREFIX, $type), '');
+                if (!empty($temp)) {
+                    $alphabet .= $temp;
+                }
+            }
+        }
+        return $alphabet;
     }
 
     public function encode(...$numbers)

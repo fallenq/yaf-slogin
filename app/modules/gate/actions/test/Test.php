@@ -8,10 +8,11 @@ class TestAction extends Action_Abstract
 {
     public function execute()
     {
-         $tool = HashidsTool::getInstance();
-         $hashCode = $tool->encode(1,2,3);
-         var_dump($hashCode);
-         var_dump($tool->decode($hashCode));
+//        var_dump(HashidsTool::getBasicAlphabet(HashidsTool::BASIC_NUMBER, HashidsTool::BASIC_CAPITAL));
+//        $tool = HashidsTool::getInstance();
+//        $hashCode = $tool->encode(1,2,3);
+//        var_dump($hashCode);
+//        var_dump($tool->decode($hashCode));
 //        $encryptTool = EncryptTool::getInstance();
 //        $encrypt = $encryptTool->encrypt("test");
 //        var_dump($encrypt);
