@@ -24,10 +24,10 @@ trait BaseCacheServiceExtend
         if (empty($dbName)) {
             $dbName = self::getRedisDbName();
         }
-        if (!empty($dbIndex)) {
+        if (empty($dbIndex)) {
             $dbIndex = self::getRedisDbIndex();
         }
-        return ['dbName' => $dbName, 'dbIndex' => $dbIndex];
+        return [$dbName, $dbIndex];
     }
 
     public static function getRedisConnection($connection = null, ...$options)
