@@ -8,21 +8,21 @@ trait BaseDaoServiceExtend
     private $model = null;
 
     /**
-     * Get model of DaoService
-     * @return null
-     */
-    public function getModel()
-    {
-        return $this->model;
-    }
-
-    /**
      * Get instance of DaoService
      * @return BaseDaoServiceExtend
      */
     public static function getInstance()
     {
         return new self();
+    }
+
+    /**
+     * Get model of DaoService
+     * @return null
+     */
+    public function getModel()
+    {
+        return $this->model;
     }
 
     /**
