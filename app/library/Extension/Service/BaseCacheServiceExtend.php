@@ -7,6 +7,15 @@ use Tool\RedisTool;
 trait BaseCacheServiceExtend
 {
 
+    /**
+     * Get instance of
+     * @return BaseCacheServiceExtend
+     */
+    public static function getInstance()
+    {
+        return new self();
+    }
+
     public static function getRedisDbName()
     {
         return defined('static::REDIS_DB') ? static::REDIS_DB : 'default';
