@@ -7,7 +7,7 @@ class LogincheckAction extends Action_Abstract
 
     public function execute()
     {
-        dd($this->getParams());
+        dd($this->getRequestParam('test'));
         exit('check');
     }
 }

@@ -11,7 +11,7 @@ trait UserAuthControllerExtend
             $request = $this->getRequest();
             $actionName = $request->getActionName();
             if (!in_array($actionName, $actionWhiteList)) {
-                dd('no right');
+                dd('No right!');
             }
         }
     }
