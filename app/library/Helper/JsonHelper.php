@@ -26,4 +26,13 @@ class JsonHelper
         }
         return $json;
     }
+
+    public static function convertToArray($json)
+    {
+        if (!empty($json)) {
+            $jsonValue = json_decode($json, true);
+            return !empty($jsonValue)? $jsonValue: '';
+        }
+        return '';
+    }
 }
