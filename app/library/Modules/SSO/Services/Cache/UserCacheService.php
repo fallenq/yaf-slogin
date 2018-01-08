@@ -14,6 +14,11 @@ class UserCacheService
 //    const REDIS_DB = '';
     const REDIS_INDEX = '1';
 
+    /**
+     * Get tag of user's login info
+     * @param $userIdentity
+     * @return string
+     */
     private static function getUserLoginInfoTag($userIdentity)
     {
         return StringHelper::combineParams(':', UserSlogan::getValue(UserSlogan::LOGIN_INFO), $userIdentity);
