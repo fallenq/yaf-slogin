@@ -14,6 +14,11 @@ class UserCacheService
 //    const REDIS_DB = '';
     const REDIS_INDEX = '1';
 
+    private static function getUserLoginInfoTag($userIdentity)
+    {
+        return StringHelper::combineParams(':', UserSlogan::getValue(UserSlogan::LOGIN_INFO), $userIdentity);
+    }
+
     /**
      * Get user info with login from Redis
      * @param $userIdentity
@@ -21,8 +26,7 @@ class UserCacheService
      */
     public static function getUserLoginInfo($userIdentity)
     {
-        $loginTag = StringHelper::combineParams(':', UserSlogan::getValue(UserSlogan::LOGIN_INFO), $userIdentity);
-        return JsonHelper::convertToArray(static::getRedisConnection()->get($loginTag));
+        return JsonHelper::convertToArray(static::getRedisConnection()->get(self::getUserLoginInfoTag($userIdentity)));
     }
 
     /**
@@ -37,9 +41,7 @@ class UserCacheService
         }
         $userId = ArrayHelper::getValue($loginInfo, 'user_id', '');
         if (!empty($userId)) {
-            $loginJson = JsonHelper::convertToJson($loginInfo);
-            $loginTag = StringHelper::combineParams(':', UserSlogan::getValue(UserSlogan::LOGIN_INFO), $userId);
-            static::getRedisConnection()->set($loginTag, $loginJson, 1800);
+            static::getRedisConnection()->set(self::getUserLoginInfoTag($userId), JsonHelper::convertToJson($loginInfo), 1800);
         }
         return false;
     }
