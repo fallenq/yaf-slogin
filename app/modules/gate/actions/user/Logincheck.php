@@ -7,6 +7,7 @@ class LogincheckAction extends Action_Abstract
 
     public function execute()
     {
+        throw new \Exception\JsonErrorException('test');
         dd($this->getRequestParam('test'));
         exit('check');
     }
