@@ -27,6 +27,11 @@ class JsonHelper
         return $json;
     }
 
+    /**
+     * Convert to array
+     * @param $json
+     * @return mixed|string
+     */
     public static function convertToArray($json)
     {
         if (!empty($json)) {
