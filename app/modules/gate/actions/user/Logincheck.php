@@ -11,7 +11,8 @@ class LogincheckAction extends Action_Abstract
     {
 //        dd(\Helper\TimeHelper::formatTimestamp());
 //        dd(new \Tool\Response\ResponseWorker());
-        dd(ResponseTool::getInstance()->output());
+        $json = ResponseTool::getInstance()->output();
+        dd(\Helper\JsonHelper::convertToArray($json));
 //        throw new \Exception\JsonErrorException('test');
         dd($this->getRequestParam('test'));
         exit('check');

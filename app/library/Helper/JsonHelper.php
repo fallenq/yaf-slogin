@@ -30,12 +30,13 @@ class JsonHelper
     /**
      * Convert to array
      * @param $json
+     * @param $assoc
      * @return mixed|string
      */
-    public static function convertToArray($json)
+    public static function convertToArray($json, $assoc = true)
     {
         if (!empty($json)) {
-            $jsonValue = json_decode($json, true);
+            $jsonValue = json_decode($json, $assoc);
             return !empty($jsonValue)? $jsonValue: '';
         }
         return '';
