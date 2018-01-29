@@ -10,15 +10,15 @@ trait BaseSloganExtend
     private static function getEnvPrefix($customEnv = null)
     {
         if (empty($customEnv)) {
-            return CommonHelper::config('common', 'slogan.env.prefix.'.ENV, '');
+            return CommonHelper::config('common', 'slogan.env.prefix.' . ENV, '');
         } else {
-            return CommonHelper::config('common', 'slogan.env.prefix.'.$customEnv, '');
+            return CommonHelper::config('common', 'slogan.env.prefix.' . $customEnv, '');
         }
     }
 
     private static function getConfigModule()
     {
-        return defined('static::CONFIG_MODULE')? static::CONFIG_MODULE: 'common';
+        return defined('static::CONFIG_MODULE') ? static::CONFIG_MODULE : 'common';
     }
 
     public static function getValue($tag, $customEnv = null)
