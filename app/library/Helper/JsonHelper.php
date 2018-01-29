@@ -28,6 +28,18 @@ class JsonHelper
     }
 
     /**
+     * 获取jsonp
+     * @param $params
+     * @param string $callBackName
+     * @return string
+     */
+    public static function convertToJsonp($params, $callBackName = '')
+    {
+        $callBackName = !empty($callBackName)? $callBackName: 'callback';
+        return self::convertToJson($params, 1, $_GET[$callBackName]);
+    }
+
+    /**
      * Convert to array
      * @param $json
      * @param $assoc
