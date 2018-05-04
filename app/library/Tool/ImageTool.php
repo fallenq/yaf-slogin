@@ -30,6 +30,11 @@ class ImageTool
         imagedestroy($image);
     }
 
+    /**
+     * Get the name of imagecreatefrom
+     * @param $imageType
+     * @return string
+     */
     private static function getImagecreatefromMethod($imageType)
     {
         $isOther = 0;
