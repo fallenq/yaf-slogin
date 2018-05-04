@@ -11,9 +11,11 @@ class ImageTool
      * Change the direction of picture
      * @param $picAddr
      */
-    public static function imgOrientate($picAddress){
+    public static function imgOrientate($picAddress, $imageType = ''){
+        $imageType = !empty($imageType)? $imageType: 'jpeg';
+        $fromMethodName = self::getImagecreatefromMethod($imageType);
+        $image = call_user_func($fromMethodName, $picAddress);
         $exif = exif_read_data($picAddress);
-        $image = imagecreatefromjpeg($picAddress);
         if($exif['Orientation'] == 3) {
             $result = imagerotate($image, 180, 0);
             imagejpeg($result, $picAddress, 100);
@@ -26,5 +28,26 @@ class ImageTool
         }
         isset($result) && imagedestroy($result);
         imagedestroy($image);
+    }
+
+    private static function getImagecreatefromMethod($imageType)
+    {
+        $isOther = 0;
+        $imageType = strtolower($imageType);
+        if ($imageType == 'gif') {
+
+        } else if($imageType == 'png') {
+
+        } else if(in_array($imageType, ['jpeg', 'jpg'])) {
+
+        } else {
+            $isOther = 1;
+        }
+        if ($isOther) {
+            $fromMethodName = 'imagecreatefromjpeg';
+        } else {
+            $fromMethodName = 'imagecreatefrom'.$imageType;
+        }
+        return $fromMethodName;
     }
 }
