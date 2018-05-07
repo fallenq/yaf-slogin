@@ -37,18 +37,18 @@ class ImageTool
      */
     private static function getImagecreatefromMethod($imageType)
     {
-        $isOther = 0;
+        $isDefault = 0;
         $imageType = strtolower($imageType);
         if ($imageType == 'gif') {
 
         } else if($imageType == 'png') {
 
         } else if(in_array($imageType, ['jpeg', 'jpg'])) {
-
+            $imageType = 'jpeg';
         } else {
-            $isOther = 1;
+            $isDefault = 1;
         }
-        if ($isOther) {
+        if ($isDefault) {
             $fromMethodName = 'imagecreatefromjpeg';
         } else {
             $fromMethodName = 'imagecreatefrom'.$imageType;
